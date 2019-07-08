@@ -1,0 +1,24 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "* [About the Project](#about-the-project)   * [Built With](#built-with) * [Getting Started](#getting-started)   * [Prerequisites](#prerequisites)   * [Installation](#installation) * [Usage](#usage)   * [Examples](#examples) * [Contact](#contact) * [Acknowledgements](#acknowledgements)",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miketdennison/bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miketdennison/bamazon/issues"
+  },
+  "homepage": "https://github.com/miketdennison/bamazon#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "mysql": "^2.17.1"
+  }
+}
