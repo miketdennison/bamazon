@@ -27,15 +27,7 @@ connection.connect(function (err) {
 function displayProducts() {
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
-        console.log("============================================");
-        for (var i = 0; i < res.length; i++) {
-            console.log("Item ID         : " + res[i].item_id);
-            console.log("Product Name    : " + res[i].product_name);
-            console.log("Department      : " + res[i].department_name);
-            console.log("Price           : " + res[i].price.toFixed(2));
-            console.log("On Hand Quantity: " + res[i].stock_quantity);
-            console.log("============================================");
-        }
+        console.table(res);
         menu();
     });
 }
@@ -76,10 +68,12 @@ function queryDB(iResponse) {
         function (err, res) {
             if (err) throw err;
             if (res.length) {
+                //Variables needed to process order
                 var itemId = iResponse.itemId;
                 var onHand = res[0].stock_quantity;
                 var requestedAmt = iResponse.purchaseAmt;
                 var price = res[0].price;
+
                 if (onHand < requestedAmt) console.log("Insufficient Stock.");
                 else processOrder(itemId, requestedAmt, onHand, price);
             } else {
@@ -98,13 +92,13 @@ function queryDB(iResponse) {
  * @param price the price of the item the user requested to purchase, defined in queryDB function
  */
 function processOrder(itemId, requestedAmt, onHand, price) {
-    connection.query("UPDATE products SET stock_quantity = ? WHERE item_id = ?",
-    [
-        onHand-requestedAmt,
-        itemId,
-    ],
-    function (err) {
-        if(err) throw err;
-        console.log(`Your Total: \$${(price * requestedAmt).toFixed(2)}`);
-    });
+    connection.query("UPDATE products SET ? WHERE ?",
+        [{
+            stock_quantity: onHand - requestedAmt,
+            item_id: itemId,
+        }],
+        function (err) {
+            if (err) throw err;
+            console.log(`Your Total: \$${(price * requestedAmt).toFixed(2)}`);
+        });
 }
