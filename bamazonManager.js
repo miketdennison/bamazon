@@ -128,6 +128,9 @@ function addToInventory(iResponse) {
     );
 }
 
+/**
+ * @desc adds a product to the db
+ */
 function addProduct() {
     inquirer.prompt([{
             type: "input",
