@@ -35,21 +35,13 @@ If the store _does_ have enough of the product, the app fulfills the customer's 
 ![bamazon][product-screenshot]  
 Running this application will:
   * List a set of menu options:
-
     * View Products for Sale
-    
     * View Low Inventory
-    
     * Add to Inventory
-    
     * Add New Product
-
   * If a manager selects `View Products for Sale`, the app lists every available item: the item IDs, names, prices, and quantities.
-
   * If a manager selects `View Low Inventory`, then it lists all items with an inventory count lower than five.
-
   * If a manager selects `Add to Inventory`, then it displays a prompt that will let the manager "add more" of any item currently in the store.
-
   * If a manager selects `Add New Product`, then it allows the manager to add a completely new product to the store.
 
 ### Built With
@@ -70,22 +62,18 @@ Running this application will:
 
 ### Installation  
 1. Install [MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
-
 2. Clone the repo
 ```sh
 git clone https:://github.com/miketdennison/bamazon.git
 ```
 3. Use bamazon.sql to set up the database
-
 4. Next, create a file named `.env`, add the following to it, replacing the values with your own database information.
-
 ```js
 # Server Information
 DB_HOST="YourServerName"
 DB_USER="YourDBUserName"
 DB_PW="YourDBPassword"
 ```
-
 5. Install NPM packages in root directory
 ```sh
 npm install
@@ -100,15 +88,13 @@ _OR_
  
 ### Examples
 1. `node bamazonCustomer.js`
-  ![bamazon][product-screenshot]
-
+  ![bamazon][product-screenshot]  
 2. `node bamazonCustomer.js`
   ![bamazon][product-screenshot]
 
 ## Contact
 
 Michael Dennison - [LinkedIn](https://linkedin.com/in/michaeltdennison) - miketdennison@gmail.com
-
 Project Link: [https://github.com/miketdennison/liri-node-app](https://github.com/miketdennison/bamazon)
 
 ## Acknowledgements
