@@ -93,10 +93,9 @@ function queryDB(iResponse) {
  */
 function processOrder(itemId, requestedAmt, onHand, price) {
     connection.query("UPDATE products SET ? WHERE ?",
-        [{
-            stock_quantity: onHand - requestedAmt,
-            item_id: itemId,
-        }],
+        [{ stock_quantity: onHand - requestedAmt },
+            { item_id: itemId }
+        ],
         function (err) {
             if (err) throw err;
             console.log(`Your Total: \$${(price * requestedAmt).toFixed(2)}`);

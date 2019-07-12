@@ -15,8 +15,8 @@
 Bamazon is an Amazon-like storefront using MySQL and Node. The app will take in orders from customers and deplete stock from the store's inventory. 
 
 ### Customer View
-`bamazonCustomer.js`  
-![bamazon][product-screenshot]  
+`bamazonCustomer.js`
+![bamazon][product-customer]  
 This part of the app prompts users with two messages.
 
    * The first asks them the ID of the product they would like to buy.
@@ -31,8 +31,8 @@ If the store _does_ have enough of the product, the app fulfills the customer's 
    * Once the update goes through, the customer is shown the total cost of their purchase.
 
 ### Manager View
-`bamazonManager.js`  
-![bamazon][product-screenshot]  
+`bamazonManager.js`
+![bamazonManager][product-manager]  
 Running this application will:
   * List a set of menu options:
     * View Products for Sale
@@ -50,6 +50,7 @@ Running this application will:
 * [npm](https://www.npmjs.com/)
 * [MySQL](https://www.npmjs.com/package/mysql)
 * [Inquirer](https://www.npmjs.com/package/inquirer)
+
 
 ## Getting Started
 
@@ -79,26 +80,37 @@ DB_PW="YourDBPassword"
 npm install
 ```
 
-## Usage
 
-1. `node bamazonCustomer.js`
+## Usage
+1. `node bamazonCustomer.js`  
 _OR_  
 2. `node bamazonManager.js`
 
- 
+
 ### Examples
 1. `node bamazonCustomer.js`
-  ![bamazon][product-screenshot]  
-2. `node bamazonCustomer.js`
-  ![bamazon][product-screenshot]
+![Customer-Example][customer-example]
+2. `node bamazonManager.js`
+* Displaying Low Inventory
+![Low-Inventory-Example][low-inventory-example]
+* Updating Inventory On-Hand
+![Update-Inventory-Example][update-inventory-example]
+* Adding a New Product
+![Add-Product-Example][add-product-example]
+
 
 ## Contact
-
-Michael Dennison - [LinkedIn](https://linkedin.com/in/michaeltdennison) - miketdennison@gmail.com
+Michael Dennison - [LinkedIn](https://linkedin.com/in/michaeltdennison) - miketdennison@gmail.com  
 Project Link: [https://github.com/miketdennison/liri-node-app](https://github.com/miketdennison/bamazon)
+
 
 ## Acknowledgements
 * [npm](https://www.npmjs.com/)
 
 <!-- IMAGES -->
-[product-screenshot]: ./#
+[product-customer]: ./screenshots/customer_static.png
+[product-manager]: ./screenshots/manager_static.png
+[customer-example]: ./screenshots/customer.gif
+[low-inventory-example]: ./screenshots/low_inventory.gif
+[update-inventory-example]: ./screenshots/update_inventory.gif
+[add-product-example]: ./screenshots/add_product.gif
